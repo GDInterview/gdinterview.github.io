@@ -33,8 +33,9 @@
     </header>
     <main>
         <div id="question"></div>
+        <p>Press Enter &LeftTeeArrow; for a new questions.</p>
     </main>
-    <footer> </footer>
+    <footer></footer>
 </body>
 <script>
     const questions = [
@@ -83,7 +84,7 @@
         }
     
         _getRandQuestion() {
-            return this.questionsDB[this._getRandomInt(0, this.questionsDB.length)].text;
+            return this.questionsDB[this._getRandomInt(0, this.questionsDB.length)]?.text;
         }
     
         _getRandomInt(min, max) {
