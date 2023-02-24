@@ -1,0 +1,19 @@
+.gdi-logo {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    text-transform: capitalize;
+}
+.gdi-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    margin: auto 4px;
+    text-align: center;
+    background-color:aquamarine;
+    text-transform: uppercase;
+    font-weight: bold;
+}
