@@ -1,4 +1,6 @@
 .gdi-logo {
+    color: rgb(57, 110, 188);
+    font-size: 1.2em;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     display: flex;
     justify-content: left;
@@ -7,13 +9,50 @@
 }
 .gdi-icon {
     display: flex;
+    font-size: .8em;
     justify-content: center;
     align-items: center;
     height: 30px;
     width: 30px;
     margin: auto 4px;
     text-align: center;
-    background-color:aquamarine;
+    background-color: rgb(57, 110, 188);
+    color: white;
     text-transform: uppercase;
     font-weight: bold;
+}
+#gdi-main-content {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: auto;
+    width: 90%;
+    bottom: 0px;
+    top: -100px;
+    font-size: 2.5em;
+    font-weight: bold;
+    color: rgb(57, 110, 188);
+    margin: 0 100px;
+}
+#gdi-main-content > p{
+    font-size: .5em;
+    color:rgb(99, 129, 194);
+}
+body {
+    background-color: rgb(184, 204, 247);
+    height: 100%;
+    width: 100%;
+}
+footer {
+    background-color: rgb(99, 129, 194);
+    color: rgb(184, 204, 247);
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
 }
