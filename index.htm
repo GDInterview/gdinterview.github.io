@@ -37,80 +37,8 @@
     </main>
     <footer></footer>
 </body>
-<script>
-    const questions = [
-        {text: "How would you add and subtract two vectors A and B?"},
-        {text: "How would you find the length of a vector?"},
-        {text: "What does normalizing a vector mean?"},
-        {text: "How would you normaliae a vector?"},
-        {text: "You are developing the next Halo game. The game begins with Master Chief's ship traveling in space with velocity V. How would you calculate how far hte ship would go in time t?"},
-        {text: "A ship lands on an uncharted planet and the captain steps out (at position M) only to begreeted by an unknown creature (at position G). How would you figure out the diirection and distance the captain would need to travel to reach the creature? "},
-        {text: "What part of a matrix represents rotation, translation and scale?"},
-        {text: "Does the order of multiplying transformation matrices matter? If so, why?"},
-        {text: "You are given a 4x4 matrix C, that represents position and orientation of a camera, 4x4 matrix O that represents positon and orientation of an object. Point P is given in local space of the object. How would calculate Pcam = point P in the camera space?"},
-        {text: "What is the inverse of an orthonormal matrix equal to?"},
-        {text: "Suppose there is an object centered on the origin. Show how you would rotate it around any axis about a point P."},
-        {text: "Given an arbitrary axis A, how would you identify the two other axes (B, C) and create a matrix that represents the three axes?"},
-        {text: "What are Euler angles?"},
-        {text: "What are some pros and cons of Euler angles?"},
-        {text: "How would you build an equation for a plane form a triangle?"},
-        {text: "How would you find the point at which a line intersects a plane?"},
-        {text: "How would you test if a point is inside a triangle?"},
-        {text: "Can you show how to derive the 2D rotation matrix?  [ cos cos theta - sin sin theta sin sin theta cos cos theta ]"},
-        {text: "What is a fustrum?"},
-        {text: "What does LOD mean?"},
-        {text: "What are mipmaps?"},
-        {text: "Name some components of a game engine?"},
-        {text: "What is a game engine?"},
-        {text: "What is a shader?"},
-        {text: "What is a vertex shader?"},
-        {text: "What is a compute shader?"},
-        {text: "What are example of shader programming languages?"},
-        {text: "What is a fragment shader?"},
-        {text: "What are pixel shader?"},
-        {text: "Give an example of a game loop?"},
-        {text: "What does FPS mean?"},
-        {text: "Tell me about a game you worked on that you are proud of?"},
-        {text: "What is source control and provide some examples?"},
-        {text: "For game design, what are pros and cons of different source controls?"}
-    ];
-    
-    class QuestionDB {
-        constructor(db) {
-            this.questionsDB = db;
-        } 
-        getRandQuestionNode() {
-            return document.createTextNode(this._getRandQuestion());
-        }
-    
-        _getRandQuestion() {
-            return this.questionsDB[this._getRandomInt(0, this.questionsDB.length)]?.text;
-        }
-    
-        _getRandomInt(min, max) {
-            min = Math.ceil(min);
-            max = Math.floor(max);
-            return Math.floor(Math.random() * (max - min)) + min;
-        }
-    }
-
-    const updateQuestionView = (questionNode) => {
-        const questionEl = document.getElementById('question');
-        questionEl?.firstChild?.remove();
-        questionEl?.appendChild(questionNode);
-    }
-
-    const qDB = new QuestionDB(questions);
-
-    document.addEventListener('keyup', (event) => {
-        var name = event.key;
-        var code = event.code;
-        // Alert the key name and key code on keydown
-        if (name === "Enter") {
-            updateQuestionView(qDB.getRandQuestionNode());
-        }
-    }, false);
-
-    updateQuestionView(qDB.getRandQuestionNode());
-</script>
+<script type="module" src="./datastore/questions.js"></script>
+<script type="module" src="./components/questions/questions_model.js"></script>
+<script type="module" src="./components/questions/questions_controller.js"></script>
+<script type="module" src="./main.js"></script>
 </html>
