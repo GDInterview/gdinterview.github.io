@@ -1,11 +1,24 @@
+html {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 0px;
+    margin: 0px;
+    background-color: rgb(184, 204, 247);
+}
 .gdi-logo {
     color: rgb(57, 110, 188);
-    font-size: 1.2em;
+    font-size: 1.5em;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     display: flex;
     justify-content: left;
     align-items: center;
-    text-transform: capitalize;
+    padding:30px 60px;
 }
 .gdi-icon {
     display: flex;
@@ -13,7 +26,7 @@
     justify-content: center;
     align-items: center;
     height: 30px;
-    width: 30px;
+    width: 40px;
     margin: auto 4px;
     text-align: center;
     background-color: rgb(57, 110, 188);
@@ -23,15 +36,14 @@
 }
 #gdi-main-content {
     display: flex;
-    position: absolute;
     justify-content: center;
     align-items: center;
     text-align: center;
     flex-direction: column;
-    height: auto;
-    width: 100%;
-    top: 0px;
-    bottom: 0px;
+    flex-grow: 1;
+}
+.gdi-main-content-spacer {
+    flex-grow: 1;
 }
 .initial-title {
     font-size: 2.5em;
@@ -47,20 +59,28 @@
     padding: 0 5%;
     color: rgb(57, 110, 188);
 }
-body {
-    /* display: flex; */
-    padding: 0px;
-    margin: 0px;
-    background-color: rgb(184, 204, 247);
-}
-footer {
-    background-color: rgb(99, 129, 194);
-    color: rgb(184, 204, 247);
+.header {
     display: flex;
-    align-items: center;
-    padding: 20px;
+    height: 100px;
+}
+.main {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+}
+.footer {
+    background-color: rgb(138, 164, 220);
+    color: rgb(251, 251, 251);
+    height: 20px;
+    padding: 20px 60px;
     position: fixed;
     bottom: 0px;
     left: 0px;
     right: 0px;
+    transition: height 500ms ease, color 500ms linear, background-color 500ms linear;
+}
+.footer:hover {
+    height: 400px;
+    color: rgb(184, 204, 247);
+    background-color: rgb(99, 129, 194);
 }
