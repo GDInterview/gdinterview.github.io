@@ -42,7 +42,7 @@ body {
     flex-direction: column;
     flex-grow: 1;
 }
-.gdi-main-content-spacer {
+#gdi-main-content-spacer {
     flex-grow: 1;
 }
 .gdi-initial-title {
