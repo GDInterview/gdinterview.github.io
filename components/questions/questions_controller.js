@@ -40,7 +40,7 @@ class QuestionsController {
 
     _questionWrapper(node) {
         const p = document.createElement('p');
-        p.classList.add('question-text');
+        p.classList.add('gdi-question-text');
         p.appendChild(node);
         return p;
     }

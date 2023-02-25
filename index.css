@@ -45,30 +45,33 @@ body {
 .gdi-main-content-spacer {
     flex-grow: 1;
 }
-.initial-title {
+.gdi-initial-title {
     font-size: 2.5em;
     font-weight: bold;
     color: rgb(57, 110, 188);
 }
-.initial-subtitle {
+.gdi-initial-subtitle {
     font-size: .5em;
     color: rgb(99, 129, 194);
 }
-.question-text {
+.gdi-question-text {
     font-size: 2.5em;
     padding: 0 5%;
     color: rgb(57, 110, 188);
 }
-.header {
+.gdi-header {
     display: flex;
     height: 100px;
 }
-.main {
+.gdi-main {
     display: flex;
     flex-direction: column;
     flex-grow: 2;
 }
-.footer {
+.gdi-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     background-color: rgb(138, 164, 220);
     color: rgb(251, 251, 251);
     height: 20px;
@@ -79,8 +82,25 @@ body {
     right: 0px;
     transition: height 500ms ease, color 500ms linear, background-color 500ms linear;
 }
-.footer:hover {
+.gdi-footer:hover {
     height: 400px;
     color: rgb(184, 204, 247);
     background-color: rgb(99, 129, 194);
+}
+.gdi-footer-logo {
+    flex-grow: 2;
+}
+.gdi-resource-lists {
+    flex-grow: 1;
+}
+.gdi-resource-header-grp {
+    display: flex;
+    justify-content: space-evenly;
+}
+.gdi-resource-header {
+    transition: color 100ms linear;
+}
+.gdi-resource-header:hover {
+    color: white;
+    cursor: pointer;
 }
