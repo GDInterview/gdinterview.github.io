@@ -26,24 +26,32 @@
     position: absolute;
     justify-content: center;
     align-items: center;
+    text-align: center;
     flex-direction: column;
     height: auto;
-    width: 90%;
+    width: 100%;
+    top: 0px;
     bottom: 0px;
-    top: -100px;
+}
+.initial-title {
     font-size: 2.5em;
     font-weight: bold;
     color: rgb(57, 110, 188);
-    margin: 0 100px;
 }
-#gdi-main-content > p{
+.initial-subtitle {
     font-size: .5em;
-    color:rgb(99, 129, 194);
+    color: rgb(99, 129, 194);
+}
+.question-text {
+    font-size: 2.5em;
+    padding: 0 5%;
+    color: rgb(57, 110, 188);
 }
 body {
+    /* display: flex; */
+    padding: 0px;
+    margin: 0px;
     background-color: rgb(184, 204, 247);
-    height: 100%;
-    width: 100%;
 }
 footer {
     background-color: rgb(99, 129, 194);

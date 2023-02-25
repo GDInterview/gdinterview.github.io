@@ -11,9 +11,9 @@ class QuestionsController {
         while (questionEl?.firstChild) {
             questionEl.removeChild(questionEl.firstChild);    
         }
-        // questionEl?.childNodes?.foreach(childEl => questionEl?.removeChild(childEl))
-        // questionEl?.firstChild?.remove();
-        questionEl?.appendChild(this.questionsModel.getRandQuestionNode());
+
+        questionEl?.appendChild(
+            this._questionWrapper(this.questionsModel.getRandQuestionNode()));
     }
 
     initPageLoad() {
@@ -26,6 +26,13 @@ class QuestionsController {
                     break;
             }
         }, false);
+    }
+
+    _questionWrapper(node) {
+        const p = document.createElement('p');
+        p.classList.add('question-text');
+        p.appendChild(node);
+        return p;
     }
 }
 
