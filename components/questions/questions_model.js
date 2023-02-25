@@ -1,8 +1,8 @@
-import {questions} from '../../datastore/questions.js';
+import {Questions} from '../../datastore/questions.js';
 
 export class QuestionsModel {
     constructor() {
-        this.questions = questions;
+        this.questions = Questions;
     } 
 
     getRandQuestionNode() {

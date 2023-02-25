@@ -9,10 +9,10 @@
 </head>
 <body>
     <header class="gdi-header">
-        <div class="gdi-logo"><div class="gdi-icon">gd</div> interview</div>
+        <div class="gdi-logo gdi-noselect"><div class="gdi-icon">gd</div> interview</div>
     </header>
     <main class="gdi-main">
-        <div id="gdi-main-content">
+        <div id="gdi-main-content" class="gdi-noselect">
             <div class="gdi-initial-title">Start your Game Developer interview.</div>
             <div class="gdi-initial-sibtitle">Press Enter &LeftTeeArrow; for a new questions.</div>
         </div>
@@ -20,11 +20,15 @@
     </main>
     <footer class="gdi-footer">
        <div class="gdi-footer-logo"><span><strong>GD</strong>&nbsp;interview</span></div>
-       <div class="gdi-resource-lists">
+       <div class="gdi-resources">
             <div class="gdi-resource-header-grp">
                 <span class="gdi-resource-header">Courses</span>
                 <span class="gdi-resource-header">Books</span>
                 <span class="gdi-resource-header">Mock interviews</span>
+            </div>
+            <div class="gdi-resource-lists">
+                <div id="gdi-course-list"></div>
+                <div id="gdi-book-list"></div>
             </div>
        </div>
     </footer>
@@ -32,5 +36,7 @@
 <script type="module" src="./datastore/questions.js"></script>
 <script type="module" src="./components/questions/questions_model.js"></script>
 <script type="module" src="./components/questions/questions_controller.js"></script>
+<script type="module" src="./components/resources/resources_model.js"></script>
+<script type="module" src="./components/resources/resources_controller.js"></script>
 <script type="module" src="./main.js"></script>
 </html>

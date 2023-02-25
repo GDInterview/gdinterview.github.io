@@ -1,4 +1,4 @@
-export const questions = [
+export const Questions = [
     {text: "How would you add and subtract two vectors A and B?"},
     {text: "How would you find the length of a vector?"},
     {text: "What does normalizing a vector mean?"},

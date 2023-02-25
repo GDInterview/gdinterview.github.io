@@ -50,6 +50,10 @@ class QuestionsController {
         el.addEventListener('click', () => {
             this.updateQuestionView(this.questionsModel.getRandQuestionNode());
         }, false);
+        el.addEventListener('mouseup', (event) =>{
+            const userSelection = window?.getSelection();
+            window.getSelection().removeAllRanges();
+        });
     }
 }
 
