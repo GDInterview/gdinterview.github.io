@@ -17,15 +17,25 @@ class QuestionsController {
     }
 
     initPageLoad() {
-        document.addEventListener('keydown', (event) => {
-            const key = event.key || String.fromCharCode(event.keyCode);
+        document
+            .addEventListener('keydown', (event) => {
+                const key = event.key || String.fromCharCode(event.keyCode);
 
-            switch(key) {
-                case "Enter":
-                    this.updateQuestionView(this.questionsModel.getRandQuestionNode());
-                    break;
-            }
-        }, false);
+                switch(key) {
+                    case "Enter":
+                        this.updateQuestionView(this.questionsModel.getRandQuestionNode());
+                        break;
+                }
+            }, false);
+        document
+            .addEventListener('ontouchstart', (event) => {
+                this.updateQuestionView(this.questionsModel.getRandQuestionNode());
+            }, false);
+        document
+            .addEventListener('click', (event) => {
+                this.updateQuestionView(this.questionsModel.getRandQuestionNode());
+            }, false);
+
     }
 
     _questionWrapper(node) {
