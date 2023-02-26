@@ -35,7 +35,20 @@ body {
 #gdi-resource-list {
     display: flex;
     flex-direction: row;
-    margin-top: 5px;
+    justify-content: flex-end;
+    padding-right: 30px;
+    line-height: 1.5em;
+}
+#gdi-resource-list a {
+    color: white;
+    text-decoration: none;
+}
+#gdi-resource-list a:hover {
+    color: white;
+    text-decoration: underline
+}
+#gdi-resource-list ul {
+    list-style: none;
 }
 .gdi-logo {
     color: #396ebc;
@@ -111,10 +124,11 @@ body {
 }
 .gdi-resource-header-grp {
     display: flex;
-    justify-content: space-evenly;
+    justify-content:flex-end;
 }
 .gdi-resource-header {
     transition: color 100ms linear;
+    margin: auto 30px;
 }
 .gdi-resource-header:hover {
     color: white;
@@ -122,6 +136,9 @@ body {
 }
 .gdi-book-category-title {
     font-weight: bold;
+    font-size:larger;
+    text-transform: capitalize;
+    margin-bottom: 10px;
 }
 .gdi-noselect {
     -webkit-user-select: none;

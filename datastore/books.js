@@ -80,7 +80,7 @@ export const Books = Object.freeze({
     ],
     math: [
         {
-            title: ' Foundations of Game Engine Development, Volume 1: Mathematics',
+            title: ' Foundations of Game Engine Development',
             author: 'Eric Lengyel',
             url: 'https://www.amazon.com/Foundations-Game-Engine-Development-Mathematics-ebook/dp/B084CT8H46?_encoding=UTF8&qid=1677299374&sr=8-1&linkCode=ll1&tag=gdinterview-20&linkId=9a0c2909235533a6e89b68f194019ee7&language=en_US&ref_=as_li_ss_tl', 
         },
