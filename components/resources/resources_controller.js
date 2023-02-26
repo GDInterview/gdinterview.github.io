@@ -1,38 +1,23 @@
 import {ResourcesModel} from './resources_model.js';
+import * as domUtils from '../../common/utils/dom_utils.js';
+import { ResourceType } from '../../common/enums/resource_type_enum.js';
+import { State } from '../../state.js';
+import { RESOURCE_TYPE_TO_STRING, RESOURCE_TYPE_TO_NODE_MAP } from '../../common/enums/enumconverter.js';
 
 class ResourcesController {
     constructor({model}) {
         this.resourcesModel = model;
+        this.state = State;
     }
 
-    renderResources() {
-        const courseList = document.getElementById('gdi-course-list');
-        const bookList = document.getElementById('gdi-book-list');
-        const coursesUl = document.createElement('ul');
+    initPageLoad() {
+        this._setInitialState();
+        this._attachEventListeners();
+    }
 
-        // Add courses
-        this.resourcesModel.getCourses().forEach(course => {
-            const li = document.createElement('li');
-            li.appendChild(this._createLinkEl(course));
-            coursesUl.appendChild(li);
-        });
-        courseList.appendChild(coursesUl);
-
-        // Add books
-        for (const [category, books] of Object.entries(this.resourcesModel.getBooks())) {
-            const booksUl = document.createElement('ul');
-            const categoryEl = document.createElement('li');
-
-            categoryEl.classList.add('gdi-book-category-title');
-            categoryEl.appendChild(document.createTextNode(category));
-            booksUl.appendChild(categoryEl);
-            books.forEach(book => {
-                const li = document.createElement('li');
-                li.appendChild(this._createLinkEl(book));
-                booksUl.appendChild(li);
-            });
-            bookList.appendChild(booksUl);
-        }
+    _setInitialState() {
+        RESOURCE_TYPE_TO_STRING.forEach(
+            (name, resourceType) => State.update({[name]: this.resourcesModel.getResources(resourceType)}));
     }
 
     _createLinkEl({title, url}) {
@@ -40,6 +25,62 @@ class ResourcesController {
         a.setAttribute('href', url);
         a.appendChild(document.createTextNode(title));
         return a;
+    }
+
+    _attachEventListeners() {
+        const resourceList = document.getElementById('gdi-resource-list')
+
+        RESOURCE_TYPE_TO_NODE_MAP.forEach((node, resourceType) => {
+            node.addEventListener('click', () => {
+                // Clear resources list
+                domUtils.removeNodeChildren(resourceList);
+                this._updateActiveResource(resourceType);
+
+                switch (resourceType) {
+                    case ResourceType.BOOK:
+                        // Add books
+                        for (const [category, books] of Object.entries(State.get().books)) {
+                            const booksUl = document.createElement('ul');
+                            const categoryEl = document.createElement('li');
+
+                            categoryEl.classList.add('gdi-book-category-title');
+                            categoryEl.appendChild(document.createTextNode(category));
+                            booksUl.appendChild(categoryEl);
+
+                            this._renderResourcesList({
+                                parentNode: resourceList, 
+                                listNode: booksUl, 
+                                resourceData: books});
+                        }
+                        break;
+                    case ResourceType.COURSE:
+                    case ResourceType.MOCK:
+                        const ul = document.createElement('ul');
+                        const resourceStr = RESOURCE_TYPE_TO_STRING.get(resourceType);
+                        const resourceData = State.get()[resourceStr];
+                        this._renderResourcesList({ 
+                            parentNode: resourceList, 
+                            listNode: ul,
+                            resourceData,
+                        });
+                        break;
+                }
+            });
+        })
+    }
+
+    _updateActiveResource(activeResource) {
+        this.state.update({activeResource});
+    }
+
+    _renderResourcesList({resourceData, parentNode, listNode}) {
+        // Add resource titles w/ url link.
+        resourceData.slice(0, 3).forEach(resource => {
+            const li = document.createElement('li');
+            li.appendChild(this._createLinkEl(resource));
+            listNode.appendChild(li);
+        });
+        parentNode.appendChild(listNode);
     }
 }
 

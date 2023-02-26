@@ -9,17 +9,17 @@ body {
     flex: 1;
     padding: 0px;
     margin: 0px;
-    background-color: rgb(184, 204, 247);
+    background-color: #b8ccf7;
 }
 /*change color of text highlight*/
 ::-moz-selection {
-    color: rgb(99, 129, 194);
-    background: rgb(184, 204, 247);
+    color: #6381c2;
+    background: #b8ccf7;
 }
 
 ::selection {
-    color: rgb(99, 129, 194);
-    background: rgb(184, 204, 247);
+    color: #6381c2;
+    background: #b8ccf7;
 }
 #gdi-main-content {
     display: flex;
@@ -32,12 +32,13 @@ body {
 #gdi-main-content-spacer {
     flex-grow: 1;
 }
-#gdi-book-list {
+#gdi-resource-list {
     display: flex;
     flex-direction: row;
+    margin-top: 5px;
 }
 .gdi-logo {
-    color: rgb(57, 110, 188);
+    color: #396ebc;
     font-size: 1.5em;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     display: flex;
@@ -54,7 +55,7 @@ body {
     width: 40px;
     margin: auto 4px;
     text-align: center;
-    background-color: rgb(57, 110, 188);
+    background-color: #396ebc;
     color: white;
     text-transform: uppercase;
     font-weight: bold;
@@ -63,16 +64,16 @@ body {
 .gdi-initial-title {
     font-size: 2.5em;
     font-weight: bold;
-    color: rgb(57, 110, 188);
+    color: #396ebc;
 }
 .gdi-initial-subtitle {
     font-size: .5em;
-    color: rgb(99, 129, 194);
+    color: #6381c2;
 }
 .gdi-question-text {
     font-size: 2.5em;
     padding: 0 5%;
-    color: rgb(57, 110, 188);
+    color: #396ebc;
 }
 .gdi-header {
     display: flex;
@@ -87,7 +88,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: rgb(138, 164, 220);
+    background-color: #8aa4dc;
     color: rgb(251, 251, 251);
     height: 20px;
     padding: 20px 60px;
@@ -98,20 +99,15 @@ body {
     transition: height 500ms ease, color 500ms linear, background-color 500ms linear;
 }
 .gdi-footer:hover {
-    height: 400px;
-    color: rgb(184, 204, 247);
-    background-color: rgb(99, 129, 194);
+    height: 200px;
+    color: #b8ccf7;
+    background-color: #6381c2;
 }
 .gdi-footer-logo {
     flex-grow: 2;
 }
 .gdi-resources {
     flex-grow: 1;
-}
-.gdi-resource-lists {
-    display: flex;
-    flex-direction: row;
-    margin-top: 5px;
 }
 .gdi-resource-header-grp {
     display: flex;

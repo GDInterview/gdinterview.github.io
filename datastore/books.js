@@ -1,4 +1,4 @@
-export const Books = {
+export const Books = Object.freeze({
     dev: [
         {
            title: 'Game Engine Architecture',
@@ -78,13 +78,6 @@ export const Books = {
             url: 'https://www.amazon.com/Game-Design-Workshop-Playcentric-Innovative/dp/1138098779?crid=S5FO90D0G8I4&keywords=Game+Design+Workshop&qid=1677299678&sprefix=game+design+workshop%2Caps%2C281&sr=8-1&ufe=app_do%3Aamzn1.fos.c1e7b9a2-53cf-44f5-ab39-5386af17669d&linkCode=ll1&tag=gdinterview-20&linkId=60dc1c7d6659ba08f5389bf6bdfa45c7&language=en_US&ref_=as_li_ss_tl', 
         },
     ],
-    general: [
-        {
-            title: 'Creativity, Inc.',
-            author: 'Amy Wallace and Edwin Catmull',
-            url: 'https://www.amazon.com/Creativity-Inc-Overcoming-Unseen-Inspiration/dp/0812993012?crid=15K7C0U13LH9I&keywords=Creativity%2C+Inc.&qid=1677299503&sprefix=creativity%2C+inc.%2Caps%2C145&sr=8-1&linkCode=ll1&tag=gdinterview-20&linkId=7887b751585e9503d06c39aef0b820fe&language=en_US&ref_=as_li_ss_tl', 
-        },
-    ],
     math: [
         {
             title: ' Foundations of Game Engine Development, Volume 1: Mathematics',
@@ -92,4 +85,4 @@ export const Books = {
             url: 'https://www.amazon.com/Foundations-Game-Engine-Development-Mathematics-ebook/dp/B084CT8H46?_encoding=UTF8&qid=1677299374&sr=8-1&linkCode=ll1&tag=gdinterview-20&linkId=9a0c2909235533a6e89b68f194019ee7&language=en_US&ref_=as_li_ss_tl', 
         },
     ],
-};
+});

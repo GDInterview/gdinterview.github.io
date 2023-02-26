@@ -2,4 +2,4 @@ import { questionsController } from "./components/questions/questions_controller
 import { resourcesController } from "./components/resources/resources_controller.js";
 
 questionsController.initPageLoad();
-resourcesController.renderResources();
+resourcesController.initPageLoad();

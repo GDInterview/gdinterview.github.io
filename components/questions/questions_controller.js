@@ -1,4 +1,5 @@
 import { QuestionsModel } from "./questions_model.js";
+import * as domUtils from '../../common/utils/dom_utils.js';
 
 class QuestionsController {
     constructor({model}) {
@@ -8,15 +9,18 @@ class QuestionsController {
     updateQuestionView() {
         const mainContentEl = document.getElementById('gdi-main-content');
 
-        while (mainContentEl?.firstChild) {
-            mainContentEl.removeChild(mainContentEl.firstChild);    
-        }
+        // Clear main content
+        domUtils.removeNodeChildren(mainContentEl);
 
         mainContentEl?.appendChild(
             this._questionWrapper(this.questionsModel.getRandQuestionNode()));
     }
 
     initPageLoad() {
+        this._attachEventListeners();
+    }
+
+    _attachEventListeners() {
         const els = [
             document.getElementById('gdi-main-content'),
             document.getElementById('gdi-main-content-spacer')

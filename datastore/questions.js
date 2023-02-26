@@ -1,4 +1,4 @@
-export const Questions = [
+export const Questions = Object.freeze([
     {text: "How would you add and subtract two vectors A and B?"},
     {text: "How would you find the length of a vector?"},
     {text: "What does normalizing a vector mean?"},
@@ -33,4 +33,4 @@ export const Questions = [
     {text: "Tell me about a game you worked on that you are proud of?"},
     {text: "What is source control and provide some examples?"},
     {text: "For game design, what are pros and cons of different source controls?"},
-];
+]);
