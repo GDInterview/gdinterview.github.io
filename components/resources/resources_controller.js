@@ -28,45 +28,57 @@ class ResourcesController {
     }
 
     _attachEventListeners() {
-        const resourceList = document.getElementById('gdi-resource-list')
-
         RESOURCE_TYPE_TO_NODE_MAP.forEach((node, resourceType) => {
-            node.addEventListener('click', () => {
-                // Clear resources list
-                domUtils.removeNodeChildren(resourceList);
+            node.addEventListener('click', () => {   
                 this._updateActiveResource(resourceType);
 
                 switch (resourceType) {
                     case ResourceType.BOOK:
-                        // Add books
-                        for (const [category, books] of Object.entries(State.get().books)) {
-                            const booksUl = document.createElement('ul');
-                            const categoryEl = document.createElement('li');
-
-                            categoryEl.classList.add('gdi-book-category-title');
-                            categoryEl.appendChild(document.createTextNode(category));
-                            booksUl.appendChild(categoryEl);
-
-                            this._renderResourcesList({
-                                parentNode: resourceList, 
-                                listNode: booksUl, 
-                                resourceData: books});
-                        }
+                        this._renderBooks();
                         break;
                     case ResourceType.COURSE:
                     case ResourceType.MOCK:
-                        const ul = document.createElement('ul');
-                        const resourceStr = RESOURCE_TYPE_TO_STRING.get(resourceType);
-                        const resourceData = State.get()[resourceStr];
-                        this._renderResourcesList({ 
-                            parentNode: resourceList, 
-                            listNode: ul,
-                            resourceData,
-                        });
+                        this._renderGeneralResource(resourceType);
                         break;
                 }
             });
         })
+    }
+
+    _renderBooks() {
+        const resourceList = document.getElementById('gdi-resource-list');
+
+        // Clear resources list
+        domUtils.removeNodeChildren(resourceList);
+
+        for (const [category, books] of Object.entries(State.get().books)) {
+            const booksUl = document.createElement('ul');
+            const categoryEl = document.createElement('li');
+            categoryEl.classList.add('gdi-book-category-title');
+            categoryEl.appendChild(document.createTextNode(category));
+            booksUl.appendChild(categoryEl);
+
+            this._renderResourcesList({
+                parentNode: resourceList, 
+                listNode: booksUl, 
+                resourceData: books});
+        }
+    }
+
+    _renderGeneralResource(resourceType) {
+        const resourceList = document.getElementById('gdi-resource-list');
+        const resourceStr = RESOURCE_TYPE_TO_STRING.get(resourceType);
+        const resourceData = State.get()[resourceStr];
+        const ul = document.createElement('ul');
+        
+        // Clear resources list
+        domUtils.removeNodeChildren(resourceList);
+
+        this._renderResourcesList({ 
+            parentNode: resourceList, 
+            listNode: ul,
+            resourceData,
+        });
     }
 
     _updateActiveResource(activeResource) {
