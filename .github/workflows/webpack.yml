@@ -32,8 +32,7 @@ jobs:
     - name: Deploy
       uses: actions/deploy-pages@v1
       with:
-        emit_telemetry: false
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.DEPLOY_GH_PAGES }}
         timeout: 600000
         error_count: 10
         reporting_interval: 5000
