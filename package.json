@@ -10,7 +10,7 @@
     "build": "webpack --mode=development",
     "//": "If you are building your app locally, in the following line remove everything after webpack-dev-server --host 0.0.0.0 --disable-host-check --public $PROJECT_DOMAIN.glitch.me",
     "start": "webpack-dev-server",
-    "predeploy": "yarn run build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
