@@ -40,4 +40,10 @@ jobs:
         reporting_interval: 5000
         artifact_name: github-pages
         preview: false
+    
+    - name: Upload static site content
+      uses: actions/upload-artifact@v3
+      with:
+        name: static-site
+        path: dist/
 
