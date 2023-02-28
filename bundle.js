@@ -11,6 +11,16 @@ module.exports = __webpack_require__.p + "bundle.css";
 
 /***/ }),
 
+/***/ "./node_modules/file-loader/dist/cjs.js?name=[name].[ext]!./index.html":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/file-loader/dist/cjs.js?name=[name].[ext]!./index.html ***!
+  \*****************************************************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "index.html";
+
+/***/ }),
+
 /***/ "./common/enums/enumconverter.ts":
 /*!***************************************!*\
   !*** ./common/enums/enumconverter.ts ***!
@@ -580,6 +590,7 @@ var Questions = Object.freeze([
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_questions_questions_controller__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/questions/questions_controller */ "./components/questions/questions_controller.ts");
 /* harmony import */ var _components_resources_resources_controller__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/resources/resources_controller */ "./components/resources/resources_controller.ts");
+__webpack_require__(/*! file-loader?name=[name].[ext]!./index.html */ "./node_modules/file-loader/dist/cjs.js?name=[name].[ext]!./index.html");
 
 
 _components_questions_questions_controller__WEBPACK_IMPORTED_MODULE_0__.questionsController.initPageLoad();
