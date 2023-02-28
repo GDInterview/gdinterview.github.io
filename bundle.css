@@ -1,0 +1,144 @@
+html {
+  height: 100%;
+  display: flex;
+  flex-direction: column; }
+
+body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 0px;
+  margin: 0px;
+  background-color: #b8ccf7; }
+
+/*change color of text highlight*/
+::-moz-selection {
+  color: #6381c2;
+  background: #b8ccf7; }
+
+::selection {
+  color: #6381c2;
+  background: #b8ccf7; }
+
+#gdi-main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  flex-grow: 1; }
+
+#gdi-main-content-spacer {
+  flex-grow: 1; }
+
+#gdi-resource-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding-right: 30px;
+  line-height: 1.5em; }
+
+#gdi-resource-list a {
+  color: white;
+  text-decoration: none; }
+
+#gdi-resource-list a:hover {
+  color: white;
+  text-decoration: underline; }
+
+#gdi-resource-list ul {
+  list-style: none; }
+
+.gdi-logo {
+  color: #396ebc;
+  font-size: 1.5em;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 30px 60px; }
+
+.gdi-icon {
+  display: flex;
+  font-size: .8em;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 40px;
+  margin: auto 4px;
+  text-align: center;
+  background-color: #396ebc;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer; }
+
+.gdi-initial-title {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: #396ebc; }
+
+.gdi-initial-subtitle {
+  font-size: .5em;
+  color: #6381c2; }
+
+.gdi-question-text {
+  font-size: 2.5em;
+  padding: 0 5%;
+  color: #396ebc; }
+
+.gdi-header {
+  display: flex;
+  height: 100px; }
+
+.gdi-main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 2; }
+
+.gdi-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #8aa4dc;
+  color: #fbfbfb;
+  height: 20px;
+  padding: 20px 60px;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  transition: height 500ms ease, color 500ms linear, background-color 500ms linear; }
+
+.gdi-footer:hover {
+  height: 200px;
+  color: #b8ccf7;
+  background-color: #6381c2; }
+
+.gdi-footer-logo {
+  flex-grow: 2; }
+
+.gdi-resources {
+  flex-grow: 1; }
+
+.gdi-resource-header-grp {
+  display: flex;
+  justify-content: flex-end; }
+
+.gdi-resource-header {
+  transition: color 100ms linear;
+  margin: auto 30px; }
+
+.gdi-resource-header:hover {
+  color: white;
+  cursor: pointer; }
+
+.gdi-book-category-title {
+  font-weight: bold;
+  font-size: larger;
+  text-transform: capitalize;
+  margin-bottom: 10px; }
+
+.gdi-noselect {
+  -webkit-user-select: none;
+  user-select: none; }

@@ -1,1 +1,0 @@
-# gdinterview.github.io
