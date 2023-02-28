@@ -22,18 +22,16 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-        folder: dist
-        ssh-key: ${{ secrets.DEPLOY_GH_PAGES }}
-
+        
     - name: Build
       run: |
         npm install
         npx webpack
         npm run predeploy
 
-    # - name: Deploy
-    #   uses: lnewby
-    #   with:
-    #     folder: dist
-    #     ssh-key: ${{ secrets.DEPLOY_GH_PAGES }}
+    - name: Deploy
+      uses: actions/deploy-pages@v1
+      with:
+        folder: dist
+        ssh-key: ${{ secrets.DEPLOY_GH_PAGES }}
 
