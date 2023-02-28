@@ -1,3 +1,5 @@
+import { Resources } from '../common/gdiTypes';
+
 export const Books = Object.freeze({
     dev: [
         {
@@ -35,7 +37,7 @@ export const Books = Object.freeze({
             author: 'Robert C. Martin',
             url: 'https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882?crid=269HLHZXI90FK&keywords=clean+code&qid=1677299129&sprefix=clean+cod%2Caps%2C200&sr=8-1&linkCode=ll1&tag=gdinterview-20&linkId=9930722ad02e6c692bf3ea350f522b77&language=en_US&ref_=as_li_ss_tl', 
         },
-    ],
+    ] as Resources[],
     design: [
         {
             title: 'Rules of Play: Game Design Fundamentals',
@@ -77,12 +79,12 @@ export const Books = Object.freeze({
             author: 'Tracy Fullerton',
             url: 'https://www.amazon.com/Game-Design-Workshop-Playcentric-Innovative/dp/1138098779?crid=S5FO90D0G8I4&keywords=Game+Design+Workshop&qid=1677299678&sprefix=game+design+workshop%2Caps%2C281&sr=8-1&ufe=app_do%3Aamzn1.fos.c1e7b9a2-53cf-44f5-ab39-5386af17669d&linkCode=ll1&tag=gdinterview-20&linkId=60dc1c7d6659ba08f5389bf6bdfa45c7&language=en_US&ref_=as_li_ss_tl', 
         },
-    ],
+    ] as Resources[],
     math: [
         {
             title: ' Foundations of Game Engine Development',
             author: 'Eric Lengyel',
             url: 'https://www.amazon.com/Foundations-Game-Engine-Development-Mathematics-ebook/dp/B084CT8H46?_encoding=UTF8&qid=1677299374&sr=8-1&linkCode=ll1&tag=gdinterview-20&linkId=9a0c2909235533a6e89b68f194019ee7&language=en_US&ref_=as_li_ss_tl', 
         },
-    ],
+    ] as Resources[],
 });

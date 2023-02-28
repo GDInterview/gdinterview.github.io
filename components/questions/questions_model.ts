@@ -1,6 +1,8 @@
-import {Questions} from '../../datastore/questions.js';
+import {Questions} from '../../datastore/questions';
 
 export class QuestionsModel {
+    private questions: typeof Questions;
+
     constructor() {
         this.questions = Questions;
     } 
@@ -13,7 +15,7 @@ export class QuestionsModel {
         return this.questions[this._getRandomInt(0, this.questions.length)]?.text;
     }
 
-    _getRandomInt(min, max) {
+    _getRandomInt(min: number, max: number) {
         min = Math.ceil(min);
         max = Math.floor(max);
         return Math.floor(Math.random() * (max - min)) + min;

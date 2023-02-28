@@ -1,9 +1,11 @@
-import { QuestionsModel } from "./questions_model.js";
-import * as domUtils from '../../common/utils/dom_utils.js';
+import { QuestionsModel } from "./questions_model";
+import * as domUtils from '../../common/utils/dom_utils';
 
 class QuestionsController {
-    constructor({model}) {
-        this.questionsModel = model;
+    private questionsModel: QuestionsModel;
+
+    constructor() {
+        this.questionsModel = new QuestionsModel();
     }
 
     updateQuestionView() {
@@ -27,12 +29,12 @@ class QuestionsController {
         ];
 
         document
-            .addEventListener('keydown', (event) => {
+            .addEventListener('keydown', (event: KeyboardEvent) => {
                 const key = event.key || String.fromCharCode(event.keyCode);
 
                 switch(key) {
                     case "Enter":
-                        this.updateQuestionView(this.questionsModel.getRandQuestionNode());
+                        this.updateQuestionView();
                         break;
                 }
             }, false);
@@ -40,25 +42,25 @@ class QuestionsController {
         els.forEach(el => this._addUpdateQuestionViewListeners(el));
     }
 
-    _questionWrapper(node) {
+    _questionWrapper(node: Text) {
         const p = document.createElement('p');
         p.classList.add('gdi-question-text');
         p.appendChild(node);
         return p;
     }
 
-    _addUpdateQuestionViewListeners(el) {
+    _addUpdateQuestionViewListeners(el: HTMLElement) {
         el.addEventListener('ontouchstart', () => {
-            this.updateQuestionView(this.questionsModel.getRandQuestionNode());
+            this.updateQuestionView();
         }, false);
         el.addEventListener('click', () => {
-            this.updateQuestionView(this.questionsModel.getRandQuestionNode());
+            this.updateQuestionView();
         }, false);
-        el.addEventListener('mouseup', (event) =>{
+        el.addEventListener('mouseup', () =>{
             const userSelection = window?.getSelection();
             window.getSelection().removeAllRanges();
         });
     }
 }
 
-export const questionsController = new QuestionsController({model: new QuestionsModel()});
+export const questionsController = new QuestionsController();

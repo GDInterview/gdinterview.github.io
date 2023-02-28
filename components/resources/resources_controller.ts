@@ -1,13 +1,15 @@
-import {ResourcesModel} from './resources_model.js';
-import * as domUtils from '../../common/utils/dom_utils.js';
-import { ResourceType } from '../../common/enums/resource_type_enum.js';
-import { State } from '../../state.js';
-import { RESOURCE_TYPE_TO_STRING, RESOURCE_TYPE_TO_NODE_MAP } from '../../common/enums/enumconverter.js';
+import {ResourcesModel} from './resources_model';
+import * as domUtils from '../../common/utils/dom_utils';
+import { ResourceType } from '../../common/enums/resource_type_enum';
+import { State } from '../../state';
+import { RESOURCE_TYPE_TO_STRING, RESOURCE_TYPE_TO_NODE_MAP } from '../../common/enums/enumconverter';
+import { Resources } from '../../common/gdiTypes';
 
 class ResourcesController {
-    constructor({model}) {
-        this.resourcesModel = model;
-        this.state = State;
+    private resourcesModel: ResourcesModel;
+
+    constructor() {
+        this.resourcesModel = new ResourcesModel();
     }
 
     initPageLoad() {
@@ -20,15 +22,15 @@ class ResourcesController {
             (name, resourceType) => State.update({[name]: this.resourcesModel.getResources(resourceType)}));
     }
 
-    _createLinkEl({title, url}) {
+    _createLinkEl(params: { title: string, url: string }) : HTMLAnchorElement {
         const a =  document.createElement('a');
-        a.setAttribute('href', url);
-        a.appendChild(document.createTextNode(title));
+        a.setAttribute('href', params.url);
+        a.appendChild(document.createTextNode(params.title));
         return a;
     }
 
     _attachEventListeners() {
-        RESOURCE_TYPE_TO_NODE_MAP.forEach((node, resourceType) => {
+        RESOURCE_TYPE_TO_NODE_MAP.forEach((node: HTMLElement, resourceType: symbol) => {
             node.addEventListener('click', () => {   
                 this._updateActiveResource(resourceType);
 
@@ -61,11 +63,11 @@ class ResourcesController {
             this._renderResourcesList({
                 parentNode: resourceList, 
                 listNode: booksUl, 
-                resourceData: books});
+                resourceData: books as Resources[]});
         }
     }
 
-    _renderGeneralResource(resourceType) {
+    _renderGeneralResource(resourceType: symbol) {
         const resourceList = document.getElementById('gdi-resource-list');
         const resourceStr = RESOURCE_TYPE_TO_STRING.get(resourceType);
         const resourceData = State.get()[resourceStr];
@@ -81,11 +83,13 @@ class ResourcesController {
         });
     }
 
-    _updateActiveResource(activeResource) {
-        this.state.update({activeResource});
+    _updateActiveResource(activeResource: any) {
+        State.update({activeResource});
     }
 
-    _renderResourcesList({resourceData, parentNode, listNode}) {
+    _renderResourcesList(params: {resourceData: Resources[], parentNode: HTMLElement, listNode: HTMLElement}) {
+        const {resourceData, parentNode, listNode} = params;
+        
         // Add resource titles w/ url link.
         resourceData.slice(0, 3).forEach(resource => {
             const li = document.createElement('li');
@@ -96,4 +100,4 @@ class ResourcesController {
     }
 }
 
-export const resourcesController = new ResourcesController({model: new ResourcesModel()});
+export const resourcesController = new ResourcesController();
