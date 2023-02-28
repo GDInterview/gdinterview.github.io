@@ -32,6 +32,11 @@ jobs:
     - name: Deploy
       uses: actions/deploy-pages@v1
       with:
-        folder: dist
-        ssh-key: ${{ secrets.DEPLOY_GH_PAGES }}
+        emit_telemetry: false
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        timeout: 600000
+        error_count: 10
+        reporting_interval: 5000
+        artifact_name: github-pages
+        preview: false
 
