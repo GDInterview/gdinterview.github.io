@@ -1,7 +1,5 @@
 export class State {
-    constructor() {
-        this.state = {};
-    }
+    static state: any;
 
     static get() {
         return this.state;

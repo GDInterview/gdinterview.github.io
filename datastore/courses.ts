@@ -1,4 +1,4 @@
-export const BookTag = Object.freeze({
+export const CourseTag = Object.freeze({
     MATH: Symbol(1),
     MOCK: Symbol(2),
     PROG: Symbol(3),
@@ -13,7 +13,7 @@ export const Courses = [
         title: '3Blue1Brown',
         author: 'Grant Sanderson',
         tags: [
-            BookTag.MATH
+            CourseTag.MATH
         ],
         url: 'https://www.3blue1brown.com/topics/linear-algebra',
     },
@@ -21,7 +21,7 @@ export const Courses = [
         title: 'Pramp',
         author: 'Rafi Zikavashvili & David Glauber',
         tags: [
-            BookTag.MOCK
+            CourseTag.MOCK
         ],
         url: 'https://www.pramp.com/',
     },
@@ -29,8 +29,8 @@ export const Courses = [
         title: 'Khan Academy',
         author: 'Sal Khan',
         tags: [
-            BookTag.MATH,
-            BookTag.PROG,
+            CourseTag.MATH,
+            CourseTag.PROG,
         ],
         url: 'https://www.khanacademy.org/',
     },
@@ -38,11 +38,11 @@ export const Courses = [
         title: 'The Cherno',
         author: 'Yan Chernikov',
         tags: [
-            BookTag.MATH,
-            BookTag.ENGINE,
-            BookTag.CPP,
-            BookTag.RAYTRACE,
-            BookTag.PROG,
+            CourseTag.MATH,
+            CourseTag.ENGINE,
+            CourseTag.CPP,
+            CourseTag.RAYTRACE,
+            CourseTag.PROG,
         ],
         url: 'https://thecherno.com/',
     }

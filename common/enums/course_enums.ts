@@ -1,4 +1,4 @@
-export const BookTag = Object.freeze({
+export const CourseTag = Object.freeze({
     MATH: Symbol(1),
     MOCK: Symbol(2),
     PROG: Symbol(3),
