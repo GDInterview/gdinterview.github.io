@@ -9,6 +9,10 @@ export const CourseTag = Object.freeze({
 });
 
 export const Courses = [
+    {   title: 'Coursera Game Development',
+        author: 'Coursera',
+        url: 'https://www.coursera.org/search?query=game%20development',
+    },
     {
         title: '3Blue1Brown',
         author: 'Grant Sanderson',
@@ -16,14 +20,6 @@ export const Courses = [
             CourseTag.MATH
         ],
         url: 'https://www.3blue1brown.com/topics/linear-algebra',
-    },
-    {
-        title: 'Pramp',
-        author: 'Rafi Zikavashvili & David Glauber',
-        tags: [
-            CourseTag.MOCK
-        ],
-        url: 'https://www.pramp.com/',
     },
     {
         title: 'Khan Academy',
@@ -45,5 +41,13 @@ export const Courses = [
             CourseTag.PROG,
         ],
         url: 'https://thecherno.com/',
-    }
+    },
+    {
+        title: 'Pramp',
+        author: 'Rafi Zikavashvili & David Glauber',
+        tags: [
+            CourseTag.MOCK
+        ],
+        url: 'https://www.pramp.com/',
+    },
 ];

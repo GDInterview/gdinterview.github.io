@@ -25,6 +25,7 @@ class ResourcesController {
     _createLinkEl(params: { title: string, url: string }) : HTMLAnchorElement {
         const a =  document.createElement('a');
         a.setAttribute('href', params.url);
+        a.setAttribute('target', '_blank');
         a.appendChild(document.createTextNode(params.title));
         return a;
     }
