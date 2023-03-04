@@ -9,10 +9,6 @@ export const CourseTag = Object.freeze({
 });
 
 export const Courses = [
-    {   title: 'Coursera Game Development',
-        author: 'Coursera',
-        url: 'https://www.coursera.org/search?query=game%20development',
-    },
     {
         title: '3Blue1Brown',
         author: 'Grant Sanderson',
